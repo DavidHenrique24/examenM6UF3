@@ -1,8 +1,8 @@
 import './App.css'
 import { Header } from './componentes/header'
-import { Usuarios } from './componentes/Usuarios'
+import { Usuarios } from './views/Usuarios'
 import { Routes, Route } from 'react-router-dom'
-import { Camareros } from './componentes/Camareros'
+import { Camareros } from './views/Camareros'
 import { NuevoPedido } from './componentes/NuevoPedido'
 import { TablaPedidos } from './componentes/TablaPedidos'
 

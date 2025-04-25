@@ -1,5 +1,3 @@
-// Archivo que contiene el array con las comandes
-
 const pedidos = [
     {
       numeroMesa: 1,
