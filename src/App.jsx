@@ -4,7 +4,6 @@ import { Usuarios } from './componentes/Usuarios'
 import { Routes, Route } from 'react-router-dom'
 import { Camareros } from './componentes/Camareros'
 import { NuevoPedido } from './componentes/NuevoPedido'
-import { FichaBirra } from './componentes/fichaBirra'
 import { TablaPedidos } from './componentes/TablaPedidos'
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
           <Route path="/camareros" element={<Camareros />} />
           <Route path="/usuarios" element={<Usuarios />} />
           <Route path="/nuevoPedido" element={<NuevoPedido />} />
-          <Route path="/fichaBirra" element={<FichaBirra />} />
           <Route path="/tablaPedidos" element={<TablaPedidos />} />
         </Routes>
       </main>
