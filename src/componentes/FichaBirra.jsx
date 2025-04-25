@@ -1,17 +1,19 @@
-export function FichaBirra() {
+export function FichaBirra({ cerveza }) {
+  if (!cerveza) return null; // Si no hay cerveza no se renderiza
+
   return (
-    <div className="col-6 border">
-      <div className="p-3 d-flex">
+    <div className="col-12 border p-3">
+      <div className="d-flex">
         <div className="w-50">
           <img
-            src="https://www.dougalls.es/ext/r/300x447-1949/cerveza-dougalls-botella-ipa8.webp"
-            alt="Cerveza Dougall's IPA 8"
-            className="w-100"
+            src={cerveza.imagen}
+            alt={cerveza.nombre}
+            className="imagen-cerveza" 
           />
         </div>
-        <div className="ps-3">
-          <h4>Estrella Galicia</h4>
-          <p>Cerveza suave y equilibrada con un sabor ligeramente amargo y aroma a malta.</p>
+        <div>
+          <h4>{cerveza.nombre}</h4>
+          <p>{cerveza.descripcion}</p>
         </div>
       </div>
     </div>

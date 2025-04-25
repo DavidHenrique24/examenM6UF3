@@ -1,6 +1,17 @@
-import bd from "../bd/bd"; // Asegúrate de que la ruta sea correcta
+import { useState } from "react"; 
+import bd from "../bd/bd"; 
 import { FichaBirra } from "./FichaBirra"; 
+
 export function NuevoPedido() {
+  const [cervezaSeleccionada, setCervezaSeleccionada] = useState(bd[0]); // Inicializamos con la primera cerveza
+
+  // Función para manejar el cambio de selección de la cerveza
+  const seleccionarCerveza = (event) => {
+    const cervezaId = parseInt(event.target.value); // Obtiene el id de la cerveza seleccionada
+    const cerveza = bd.find((item) => item.id === cervezaId); // Find busca el id en el array 'bd'
+    setCervezaSeleccionada(cerveza); // Actualiza el estado con la cerveza seleccionada
+  };
+
   return (
     <div className="container mt-3 p-5 border shadow-lg">
       <h1 className="text-center mb-5">----- Vista usuario -----</h1>
@@ -15,11 +26,15 @@ export function NuevoPedido() {
 
           <h3 className="mt-5">Haz tu pedido</h3>
           <div className="d-flex gap-3">
-            <select name="cervezas" id="cervezas" className="form-control">
-              <option value="">Selecciona qué birra quieres</option>
+            <select
+              name="cervezas"
+              id="cervezas"
+              className="form-control"
+              onChange={seleccionarCerveza} // Llamamos a la función
+            >
               {bd.map((birra) => (
                 <option key={birra.id} value={birra.id}>
-                  {birra.nombre} 
+                  {birra.nombre}
                 </option>
               ))}
             </select>
@@ -28,8 +43,9 @@ export function NuevoPedido() {
 
           <button className="btn btn-success mt-4 w-100">¡Enviar pedido!</button>
         </div>
-          <FichaBirra />
-      
+        <div className="col-6">
+          <FichaBirra cerveza={cervezaSeleccionada} />
+        </div>
       </div>
     </div>
   );
