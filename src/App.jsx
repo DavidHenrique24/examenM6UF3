@@ -4,7 +4,9 @@ function App() {
 
   return (
     <>
-      <h1 className='text-center'>Examen UF3</h1>
+    <header>David Henrique</header>
+    <main> Yo soy locura</main>
+    <footer>Soy footer</footer>
       
     </>
   )
