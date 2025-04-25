@@ -1,4 +1,5 @@
-import { FichaBirra } from "../componentes/FichaBirra";
+import bd from "../bd/bd"; // Asegúrate de que la ruta sea correcta
+import { FichaBirra } from "./FichaBirra"; 
 export function NuevoPedido() {
   return (
     <div className="container mt-3 p-5 border shadow-lg">
@@ -16,18 +17,20 @@ export function NuevoPedido() {
           <div className="d-flex gap-3">
             <select name="cervezas" id="cervezas" className="form-control">
               <option value="">Selecciona qué birra quieres</option>
-              <option value="">Estrella Galicia</option>
+              {bd.map((birra) => (
+                <option key={birra.id} value={birra.id}>
+                  {birra.nombre} 
+                </option>
+              ))}
             </select>
             <input type="number" defaultValue="0" className="form-control" />
           </div>
 
           <button className="btn btn-success mt-4 w-100">¡Enviar pedido!</button>
         </div>
-
-        <FichaBirra />
-       
+          <FichaBirra />
+      
       </div>
-    
     </div>
   );
 }
