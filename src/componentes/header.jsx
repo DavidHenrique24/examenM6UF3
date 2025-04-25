@@ -17,12 +17,7 @@ export function Header() {
               <li className="nav-item">
                 <Link className="nav-link" to="/camareros">Camareros</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/nuevoPedido">Nuevo Pedido</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/tablaPedidos">Tabla Pedidos</Link>
-              </li>
+  
             </ul>
           </div>
         </div>
