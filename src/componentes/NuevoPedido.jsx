@@ -8,7 +8,7 @@ export function NuevoPedido() {
   // Función para manejar el cambio de selección de la cerveza
   const seleccionarCerveza = (event) => {
     const cervezaId = parseInt(event.target.value); // Obtiene el id de la cerveza seleccionada
-    const cerveza = bd.find((item) => item.id === cervezaId); // Find busca el id en el array 'bd'
+    const cerveza = bd.find((item) => item.id === cervezaId); // Find busca el id en el array bd
     setCervezaSeleccionada(cerveza); // Actualiza el estado con la cerveza seleccionada
   };
 

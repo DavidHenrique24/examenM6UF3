@@ -12,6 +12,7 @@ function App() {
       <Header />
       <main className="container my-4 pt-3">
         <Routes>
+          <Route path="/" element={<h1 className="text-center">Bienvenido examen uf3</h1>} />
           <Route path="/camareros" element={<Camareros />} />
           <Route path="/usuarios" element={<Usuarios />} />
           <Route path="/nuevoPedido" element={<NuevoPedido />} />
